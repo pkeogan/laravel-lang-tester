@@ -1,0 +1,54 @@
+{
+    "name": "pkeogan/laravel-lang-tester",
+    "description": "Did you implement a language file after your on production? Then you know its hard to determine if your caught every string. This package implement's a console command change every (or selected) values of a language file to emojis or a predefined string to rapidly identify any loose ends. ",
+    "keywords": [
+        "pkeogan",
+        "laravel-lang-tester"
+    ],
+    "homepage": "https://github.com/pkeogan/laravel-lang-tester",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Peter Keogan",
+            "email": "peter@comet.software",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pkeogan\\LaravelLangTester\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pkeogan\\LaravelLangTester\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pkeogan\\LaravelLangTester\\LaravelLangTesterServiceProvider"
+            ],
+            "aliases": {
+                "LaravelLangTester": "Pkeogan\\LaravelLangTester\\LaravelLangTesterFacade"
+            }
+        }
+    }
+}
